@@ -1,0 +1,39 @@
+$white: #FFF;
+$bg_menu: #282828;
+$contentBackground: #f5f5f5;
+
+@mixin Oswald-font($size, $height, $weight, $style, $color) {
+    font-family: 'Oswald', sans-serif;
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+}
+
+@mixin PTSerif-font($size, $height, $weight, $style, $color) {
+    font-family: 'PT Serif', serif;
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+}
+
+@mixin FontAwesome-font($size, $height, $weight, $color) {
+    font-family: fontawesome;
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin Placeholder($size, $height, $weight, $style, $color) {
+    font-family: 'Oswald', sans-serif;
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+    text-transform: uppercase;
+}

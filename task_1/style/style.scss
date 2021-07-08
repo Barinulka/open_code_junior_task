@@ -1,0 +1,145 @@
+@import 'var';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $contentBackground;
+    font-family: 'Oswald', 'Helvetica', sans-serif;
+    // font-family: 'PT Serif', serif;
+}
+
+.center {
+    padding: 0 calc(50% - 1132px / 2);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 109px;
+    background-color: $white;
+    &-left {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        &__logo {
+            @include Oswald-font(48px, 1.2, 700, normal, #eb3c00);
+            text-transform: uppercase;
+        }
+        &__title {
+            @include PTSerif-font(18px, 1.2, 400, italic, #282828);
+            opacity: 0.5;
+            margin-top: 44px;
+            margin-left: 10px;
+        }
+    }
+    &-right {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        &__login {
+            @include PTSerif-font(13px, 1.2, 400, italic, #282828);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-right: 33px;
+        }
+        &__login::before {
+            @include FontAwesome-font(14px, 1.2, 400, #ee4400);
+            content: '\f084';
+            text-transform: uppercase;
+            padding-right: 8px;
+        }
+        &__button {
+            @include PTSerif-font(13px, 1.2, 400, italic, $white);
+            text-transform: uppercase;
+            padding: 17px 55px 17px 57px;
+            background-color: #ee4400;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.navigation {
+    background-color: $bg_menu;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    &-menu {
+        padding: 0px;
+        &__item {
+            display: inline-block;
+            padding: 0 16px;
+        }
+        &__link {
+            @include Oswald-font(18px, 1.2, 400, normal, $white);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+    }
+    &-search {
+        &__input {
+            outline: none;
+            border: none;
+            background-color: $white;
+            padding: 12px 35px 12px 16px;
+            width: 269px;
+        }
+        &__input::-webkit-input-placeholder {@include Placeholder(15px, 1.2, 400, normal, #282828)}
+        &__input::-moz-placeholder {@include Placeholder(15px, 1.2, 400, normal, #282828)}
+        &__input:-moz-placeholder {@include Placeholder(15px, 1.2, 400, normal, #282828)}
+        &__input:-ms-input-placeholder {@include Placeholder(15px, 1.2, 400, normal, #282828)}
+        &__button {
+            outline: none;
+            border: none;
+            background: none;
+            position: absolute;
+        }
+        &__button::after {
+            @include FontAwesome-font(18px, 1.2, 400, #2d3340);
+            content: '\f002';
+            position: relative;
+            right: 35px;
+            top: 7px;
+        }
+    }
+}
+
+.content {
+    background-color: $contentBackground;
+    display: block;
+    &__title {
+        @include Oswald-font(48px, 60px, 400, normal, #282828);
+        max-width: 820px;
+        display: inline-block;
+    }
+    &__info {
+        @include PTSerif-font(24px, 36px, 400, normal, #282828);
+        max-width: 820px;
+        display: inline-block;
+    }
+    &__info_list-title {
+        @include PTSerif-font(18px, 27px, 700, normal, #282828);
+        display: block;
+    }
+    &__list {
+        padding-inline-start: 19px
+    }
+    &__item {
+        @include PTSerif-font(18px, 27px, 400, normal, #282828);
+    }
+}
