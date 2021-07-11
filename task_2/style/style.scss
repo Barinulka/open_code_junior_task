@@ -19,18 +19,34 @@ body {
 
 .hidden {
     display: none !important;
-  }
+}
+
+.toggle {
+    visibility: visible;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        transform:translateX(-50px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
 
 main {
     // display: grid;
     // grid-template-columns: 50% 50%;
     // grid-gap: 15px;
     margin-top: 65px;
+    // display: flex;
 }
 
 .books {
     // display: grid;
-    // grid-template-columns: repeat(4, 50px);
+    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     // grid-column-gap: 10px;
     // grid-row-gap: 15px;
     // align-items: end;
@@ -38,8 +54,15 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
-    
+    // width: 45%;
+    border: 1px solid;
 }
+
+.desc {
+    // width: 50%;
+    border: 1px solid;
+}
+
 
 .books-info {
     display: flex;
@@ -49,7 +72,11 @@ main {
     align-content: flex-start;
     width: 160px;
     outline: 1px solid;
-    padding: 0px 10px;
+    padding: 0px 10px;  
+    height: 159px;
+    cursor: pointer;
+    transition: transform 3s;
+    transition-timing-function: ease;
     &__author {
         font-size: 15px;
         border-bottom: 1px solid;
